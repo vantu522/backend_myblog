@@ -25,6 +25,10 @@ postRouter.put(
     asyncHandler(postController.updatePost)
 )
 
+postRouter.delete(
+    '/delete-post/:id',
+    asyncHandler(postController.deletePost)
+)
  
  
 export default postRouter

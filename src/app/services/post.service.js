@@ -21,11 +21,19 @@ export async function updatePost(postId, {image,...updateData}){
         throw new Error('Post not found')
     }
     if(image instanceof FileUpload){
-        updateData.image=image.save()
+        updateData.image=image.save() 
 
     }
 
     Object.assign(post,updateData)
     return await post.save()
+}
+
+export async function deletePost(postId){
+    const deletedPost = await Post.findByIdAndDelete(postId)
+    if (!deletedPost){
+        throw new Error('Post not found.')
+    }
+    return deletedPost
 }
 
