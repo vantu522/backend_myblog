@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt'
 import createModel from './base'
 
 const Post = createModel(

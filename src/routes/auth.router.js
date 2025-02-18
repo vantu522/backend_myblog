@@ -5,8 +5,7 @@ import validate from '@/app/middleware/common/validate'
 import * as authMiddleware from '../app/middleware/auth.middleware'
 import * as authRequest from '../app/requests/auth.request'
 import * as authController from '../app/controllers/auth.controller'
-import * as postRquest from '../app/requests/post.request'
-import * as postController from '../app/controllers/post.controller'
+
 const authRouter = Router()
 
 authRouter.post(
@@ -60,10 +59,6 @@ authRouter.post(
     asyncHandler(authController.resetPassword),
 )
 
-authRouter.post(
-    '/create-post',
-    asyncHandler(validate(postRquest.createPost)),
-    asyncHandler(postController.create)
-)
+
 
 export default authRouter
