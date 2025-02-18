@@ -1,6 +1,6 @@
 import sourceMapSupport from 'source-map-support'
 import {spawn} from 'child_process'
-import {db} from './configs'
+import mongoDb from './configs/mongodb'
 import createApp from '.'
 import executeScheduledTasks from './tasks'
 import {getInterfaceIp} from './utils/helpers'
@@ -12,7 +12,7 @@ const host = process.env.HOST || 'localhost'
 const port = parseInt(process.env.PORT, 10) || 3456
 
 const app = createApp()
-db.connect().then(() => console.log('Database connection successful!'))
+mongoDb.connect().then(() => console.log('Database connection successful!'))
 
 // Run Server
 app.listen(port, host, async function () {
