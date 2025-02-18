@@ -1,9 +1,9 @@
 import sourceMapSupport from 'source-map-support'
 import {spawn} from 'child_process'
-import {db} from './configs/index.js'
+import {db} from './configs'
 import createApp from './index.js'
-import executeScheduledTasks from './tasks/index.js'
-import {getInterfaceIp} from './utils/helpers/mixins.helper.js'
+import executeScheduledTasks from './tasks' 
+import {getInterfaceIp} from './utils/helpers'
 
 // enable source maps
 sourceMapSupport.install()          
