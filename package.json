@@ -8,7 +8,7 @@
   },
   "main": "src/main.js",
   "scripts": {
-    "start": "node",
+    "start": "nodemon",
     "dev":"nodemon",
     "seed": "babel-node src/seeders",
     "build": "del-cli build && cross-env NODE_ENV=build babel src -d build -D",
