@@ -1,4 +1,4 @@
-import sourceMapSupport from 'source-map-support'
+// import sourceMapSupport from 'source-map-support'
 import {spawn} from 'child_process'
 import {db} from './configs'
 import createApp from './index.js'
@@ -6,7 +6,7 @@ import executeScheduledTasks from './tasks'
 import {getInterfaceIp} from './utils/helpers'
 
 // enable source maps
-sourceMapSupport.install()          
+// sourceMapSupport.install()          
 // const sourceMapSupport = require('source-map-support')
 
 
