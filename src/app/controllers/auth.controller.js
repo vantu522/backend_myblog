@@ -24,7 +24,7 @@ export async function logout(req, res) {
     await authService.blockToken(token)
     res.jsonify('Đăng xuất thành công.')
 }
-
+ 
 export async function me(req, res) {
     const result = await authService.profile(req.currentUser._id)
     res.jsonify(result)
