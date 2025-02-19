@@ -5,7 +5,7 @@ import postRouter from './post.route'
 function route(app) {
     app.use('/auth', authRouter)
     app.use('/users', userRouter)
-    app.use('/p', postRouter)
+    app.use('/post', postRouter)
 }
 
 export default route 
