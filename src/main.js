@@ -11,7 +11,7 @@ import {getInterfaceIp} from './utils/helpers'
 
 
 const host = process.env.HOST || 'localhost'
-const port = parseInt(process.env.PORT, 10) || 3456
+const port = process.env.PORT || 3000
 
 const app = createApp()
 db.connect().then(() => console.log('Database connection successful!'))
