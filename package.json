@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "node build/main.js",
-    "build": "del-cli build && babel src -d build -D"
+    "build": "babel src -d build"
   },
   "dependencies": {
     "@babel/runtime": "^7.24.7",
