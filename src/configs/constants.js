@@ -1,6 +1,6 @@
 import path from 'path'
 import short from 'short-uuid'
-import dotenv from 'dotenv'
+import dotenv from 'dotenv'   
 import assert from 'assert'
 import _ from 'lodash' 
 
@@ -14,7 +14,7 @@ export const PUBLIC_DIR = path.join(APP_DIR, 'public')
 export const PRIVATE_DIR = path.join(APP_DIR, 'private')
 export const LOG_DIR = path.join(PRIVATE_DIR, 'logs')
 export const CACHE_DIR = path.join(PRIVATE_DIR, 'cache')
-export const VIEW_DIR = path.join(SOURCE_DIR, 'views')
+export const VIEW_DIR = path.join(SOURCE_DIR, 'views') 
 
 export const APP_ENV = {
     PRODUCTION: 'production',

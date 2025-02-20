@@ -44,5 +44,5 @@ if (process.env.__ESLINT__ === 'true') {
 
     eslintProcess.on('close', function (code) {
         if (code !== 0) process.exit(1)
-    })
+    }) 
 }
