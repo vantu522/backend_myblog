@@ -34,8 +34,8 @@ function createApp() {
     }
     app.use(limiter)
     app.use(serveFavicon(path.join(PUBLIC_DIR, 'favicon.ico')))
-    // app.use('/static', express.static(PUBLIC_DIR))
-    app.use('/uploads', express.static(path.join(PUBLIC_DIR, 'uploads')));
+    app.use('/static', express.static(PUBLIC_DIR))
+    // app.use('/uploads', express.static(path.join(PUBLIC_DIR, 'uploads')))
 
     app.use(helmet())
     app.use(express.json())
