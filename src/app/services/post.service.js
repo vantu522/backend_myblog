@@ -4,7 +4,7 @@ import { FileUpload } from '@/utils/classes'
 
 export async function createPost({image,...requestBody}){
     if(image instanceof FileUpload){
-        requestBody.image= image.save()
+        requestBody.image= await image.save()
     }
 
     const post = new Post(requestBody)
@@ -12,7 +12,7 @@ export async function createPost({image,...requestBody}){
 }
 
 export async function getAllPosts(){
-    return await Post.find()
+    return await Post.find() 
 }
 
 export async function updatePost(postId, {image,...updateData}){
