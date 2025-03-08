@@ -7,7 +7,7 @@ import {getInterfaceIp} from './utils/helpers'
 
 // enable source maps
 sourceMapSupport.install()          
-// const sourceMapSupport = require('source-map-support')
+// cons t sourceMapSupport = require('source-map-support')
 
    
 const host = process.env.HOST || 'localhost'

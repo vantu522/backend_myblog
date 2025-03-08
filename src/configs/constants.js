@@ -22,15 +22,15 @@ export const APP_ENV = {
 }
 export const NODE_ENV = Object.values(APP_ENV).includes(process.env.NODE_ENV)
     ? process.env.NODE_ENV
-    : APP_ENV.PRODUCTION
+    : APP_ENV.PRODUCTION 
 
 
 // Loads `.env` file contents into process.env
-dotenv.config({
+dotenv.config({   
     path: [
         path.join(APP_DIR, `.env.${NODE_ENV}`),
         path.join(APP_DIR, '.env')
-    ],
+    ], 
 })
 
 // environment
@@ -48,6 +48,7 @@ export const OTHER_URLS_CLIENT = process.env.OTHER_URLS_CLIENT
     ? JSON.parse(process.env.OTHER_URLS_CLIENT)
     : []
 assert(_.isArray(OTHER_URLS_CLIENT), 'OTHER_URLS_CLIENT must be an array.')
+
 
 export const SECRET_KEY = process.env.SECRET_KEY
 assert(!_.isEmpty(SECRET_KEY), assertMsg('SECRET_KEY'))

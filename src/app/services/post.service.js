@@ -15,6 +15,16 @@ export async function getAllPosts(){
     return await Post.find() 
 }
 
+export async function getPostById(postId){
+    
+    const post = await Post.findById(postId)
+    if(!post){
+        throw new Error('Post not found')
+    }
+
+    return post
+}
+
 export async function updatePost(postId, {image,...updateData}){
     const post = await Post.findById(postId)
     if(!post ){

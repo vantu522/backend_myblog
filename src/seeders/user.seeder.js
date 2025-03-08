@@ -1,8 +1,8 @@
 import {User} from '@/models'
 
 async function userSeeder(session) {
-    const email = 'admin@zent.vn'
-    const password = 'Zent@123.edu.vn'
+    const email = 'tuduongvan2305@gmail.com'
+    const password = '12345678Dt@'
     let superAdmin = await User.findOne({email})
     if (!superAdmin) {
         superAdmin = new User({name: 'Super Admin', email, password})

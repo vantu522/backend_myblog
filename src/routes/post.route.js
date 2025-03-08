@@ -20,6 +20,12 @@ postRouter.get(
     
 )
 
+postRouter.get(
+    '/:postId',
+    asyncHandler(postController.getPostById)
+)
+
+
 postRouter.put(
     '/update-post/:id',
     asyncHandler(postController.updatePost)

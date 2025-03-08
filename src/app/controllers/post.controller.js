@@ -12,6 +12,13 @@ export async function getAllPost(req,res){
     
 }
 
+export async function getPostById(req,res){
+    const {postId} = req.params
+    const post = await postService.getPostById(postId)
+    res.status(201).json(post)
+    
+}
+
 export async function updatePost(req,res){
     const post = await postService.updatePost(req.params.id, req.body)
     res.status(201).jsonify(post, 'Cập nhật bài viết thành công.')
