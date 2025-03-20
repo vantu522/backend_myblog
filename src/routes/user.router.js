@@ -28,7 +28,7 @@ userRouter.post(
     asyncHandler(userController.createItem)
 )
 
-userRouter.put(
+userRouter.put(  
     '/:id',
     asyncHandler(userMiddleware.checkUserId),
     asyncHandler(validate(userRequest.updateItem)),

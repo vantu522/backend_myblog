@@ -8,6 +8,7 @@ import * as authController from '../app/controllers/auth.controller'
 
 const authRouter = Router()
 
+
 authRouter.post(
     '/login',
     asyncHandler(validate(authRequest.login)),

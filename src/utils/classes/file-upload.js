@@ -11,7 +11,7 @@ cloudinary.config({
 
 
 class FileUpload {
-    static UPLOAD_FOLDER = 'uploads'
+    static UPLOAD_FOLDER = 'post_files'
 
     //nhận file từ request và tạo tên file mới
     constructor({originalname, mimetype, buffer}) {
@@ -39,7 +39,7 @@ class FileUpload {
         if (!this.filepath) {
             return new Promise((resolve, reject) => {
                 const uploadStream = cloudinary.uploader.upload_stream(
-                    { folder: `uploads/${paths.join('/')}` },
+                    { folder: `${FileUpload.UPLOAD_FOLDER}/${paths.join('/')}` },
                     (error, result) => {
                         if (error) return reject(error)
                         this.filepath = result.secure_url // Lưu URL ảnh Cloudinary
@@ -54,10 +54,20 @@ class FileUpload {
     }
 
     // Xóa file khỏi Cloudinary theo URL
-    static  remove(filepath) {
-        const publicId = filepath.split('/').pop().split('.')[0] // Lấy ID từ URL
+    // Xóa file khỏi Cloudinary theo URL
+    static remove(filepath) {
+        if (!filepath) return Promise.reject(new Error('Filepath is required'))
+
+        // Lấy phần đường dẫn sau thư mục "upload/" trên Cloudinary (bỏ domain)
+        const publicId = filepath
+            .split('/')
+            .slice(-2) // Lấy thư mục + tên file
+            .join('/')
+            .split('.')[0] // Bỏ phần mở rộng
+
         return cloudinary.uploader.destroy(publicId)
     }
+
 }
 
 export default FileUpload

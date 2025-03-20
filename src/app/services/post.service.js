@@ -31,7 +31,12 @@ export async function updatePost(postId, {image,...updateData}){
         throw new Error('Post not found')
     }
     if(image instanceof FileUpload){
-        updateData.image=image.save() 
+        if(post.image){
+            await FileUpload.remove(post.image)
+        }
+
+
+        updateData.image=await image.save() 
 
     }
 

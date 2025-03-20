@@ -19,7 +19,7 @@ postRouter.get(
     asyncHandler(postController.getAllPost)
     
 )
-
+ 
 postRouter.get(
     '/:postId',
     asyncHandler(postController.getPostById)

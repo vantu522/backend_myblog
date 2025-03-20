@@ -14,7 +14,7 @@ export async function checkValidLogin({email, password}) {
     if (user) {
         const verified = user.verifyPassword(password)
         if (verified) {
-            return user
+            return user 
         }
     }
 
