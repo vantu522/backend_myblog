@@ -8,9 +8,14 @@ const Subcriber = createModel(
             type:String,
             required:true
         },
-        messgae: {
+        message: {
             type: String,
             required: true
+        },
+        status:{
+            type: String,
+            enum:['pending', 'completed'],
+            default: 'pending'
         }
 
         
