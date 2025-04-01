@@ -9,6 +9,6 @@ export const createPost = Joi.object({
     image: Joi.object({
         mimetype: Joi.valid('image/jpeg', 'image/png', 'image/webp').required().label('Định dạng ảnh'),
     }).unknown(true).label('Ảnh bìa').allow(''),
-    status:Joi.string().valid('public', 'private').default('public').label('Trạng thái')
+    status:Joi.string().valid('public', 'private').label('Trạng thái')
 
 })

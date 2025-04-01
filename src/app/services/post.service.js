@@ -1,20 +1,21 @@
 import Post from '@/models/post'
 import { FileUpload } from '@/utils/classes'
-
-
+ 
+ 
 export async function createPost({image,...requestBody}){
     if(image instanceof FileUpload){
-        requestBody.image= await image.save()
-    }
+        requestBody.image= await image.save() 
+    } 
 
     const post = new Post(requestBody)
+
     return await post.save()
 }
 
 export async function getAllPosts(){
     return await Post.find() 
 }
-
+ 
 export async function getPostById(postId){
     
     const post = await Post.findById(postId)
@@ -34,8 +35,6 @@ export async function updatePost(postId, {image,...updateData}){
         if(post.image){
             await FileUpload.remove(post.image)
         }
-
-
         updateData.image=await image.save() 
 
     }

@@ -9,7 +9,7 @@ const postRouter = Router()
 
 
 postRouter.post(
-    '/create-post',
+    '/create',
     asyncHandler(validate(postRequest.createPost)),
     asyncHandler(postController.create)
 )
@@ -27,12 +27,12 @@ postRouter.get(
 
 
 postRouter.put(
-    '/update-post/:id',
+    '/update/:id',
     asyncHandler(postController.updatePost)
 )
 
 postRouter.delete(
-    '/delete-post/:id',
+    '/delete/:id',
     asyncHandler(postController.deletePost)
 )
  

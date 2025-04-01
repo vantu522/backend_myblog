@@ -11,7 +11,7 @@ cloudinary.config({
 
 
 class FileUpload {
-    static UPLOAD_FOLDER = 'post_files'
+    static UPLOAD_FOLDER = 'post_files' 
 
     //nhận file từ request và tạo tên file mới
     constructor({originalname, mimetype, buffer}) {
@@ -53,7 +53,6 @@ class FileUpload {
         }
     }
 
-    // Xóa file khỏi Cloudinary theo URL
     // Xóa file khỏi Cloudinary theo URL
     static remove(filepath) {
         if (!filepath) return Promise.reject(new Error('Filepath is required'))
